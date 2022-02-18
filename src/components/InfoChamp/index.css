@@ -1,0 +1,134 @@
+body {
+  overflow-x: hidden;
+}
+.title-champ {
+  width: 80%;
+}
+.container-title-champ {
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  width: 100vw;
+}
+.container-carrosel {
+  border: 1px solid #afa1eb;
+}
+.carrosel-skins {
+  width: 750px;
+  height: 300px;
+}
+.img-carrosel {
+  width: 310px;
+  height: 100%;
+  transition: all 0.4s;
+  animation-timing-function: ease;
+}
+.img-carrosel:hover {
+  transform: scale(1.2);
+}
+.container-title-champ .img-champ {
+  width: 100%;
+  height: 100%;
+}
+.img-champ .name-caption-champ {
+  border: 1px solid green;
+}
+.animate .info-champ {
+  display: flex;
+  justify-content: space-around;
+}
+.info-champ .blurb {
+  padding: 0em 1em;
+}
+.info-champ .sinopse {
+  animation: efeit 5s ease alternate infinite;
+  background: linear-gradient(
+      270deg,
+      #59388e 0,
+      #312266 25%,
+      #09093c 50%,
+      #000018 75%,
+      #000000 100%
+    )
+    no-repeat;
+  background-size: 300% 300%;
+  border: 2px double blueviolet;
+  height: 300px;
+  width: 580px;
+}
+.info-champ .sinopse:hover {
+  background-color: #000913;
+}
+@keyframes efeit {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+.info-champ .img-champs {
+  width: 500px;
+  height: 280px;
+  margin-top: 1em;
+  transition: 0.6s;
+  animation-timing-function: ease;
+}
+.info-champ .img-champs:hover {
+  box-shadow: 1px 5px 40px 0px #616296;
+  transform: scale(1.1);
+}
+
+.container-stats {
+  border: 3px double #913359;
+  margin-top: 2em;
+  margin-left: 6em;
+  text-align: start;
+  width: 33%;
+  height: 100%;
+}
+
+.stats {
+}
+
+.stats .list-atributte-champ {
+  display: flex;
+}
+
+.animate {
+  background-color: #000913;
+  background-repeat: repeat-x;
+  animation-name: slide;
+  transform: translateY(-100px);
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  /* animation: slide 3s forwards;  */
+}
+.list-atributte-champ .list {
+  list-style-type: none;
+}
+.list-atributte-champ .list .atributte {
+  padding-bottom: 1em;
+}
+
+@keyframes slide {
+  from {
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.indic {
+  animation: effect-arrow 1s ease-in-out alternate infinite;
+  vertical-align: middle;
+  padding-right: 0.5em;
+}
+@keyframes effect-arrow {
+  to {
+    transform: translateX(5px);
+  }
+}
+.atributte .color-stats {
+  color: gold;
+}

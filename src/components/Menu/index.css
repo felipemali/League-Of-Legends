@@ -1,0 +1,43 @@
+.container {
+}
+.container .menu {
+  background-color: #111;
+  padding: 0.2em;
+}
+/* #121625 */
+.menu .img-logo-md {
+  cursor: pointer;
+  height: 80px;
+  width: 80;
+}
+.menu .box-buttons {
+  justify-content: center;
+}
+
+.menu .buttons-center {
+  font-family: cursive;
+  color: #fff;
+  padding-left: 2em;
+}
+.menu .buttons-center:hover {
+  color: #937c08;
+  background: none;
+}
+
+.menu .button-session {
+  font-family: cursive;
+  color: #07c689;
+  margin-right: 0.5em;
+}
+.menu .button-session:hover {
+  color: #97fd7a;
+  border: 1px solid gray;
+}
+.menu .button-Play {
+  color: #ff8260;
+  margin-right: 1em;
+}
+.menu .button-Play:hover {
+  color: #ffcd63;
+  border: 1px solid gray;
+}

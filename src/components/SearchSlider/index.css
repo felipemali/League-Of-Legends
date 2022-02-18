@@ -1,0 +1,34 @@
+.slider-search {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 4em;
+
+  border-radius: 3%;
+  box-shadow: inset 0 0 0.2em #f3eae8, 0 0 1em #ffd026;
+}
+
+.slider .input-search {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.slider .buttons-search {
+  display: flex;
+  justify-content: center;
+}
+.slider .buttons-search-style {
+  color: #887675;
+  font-family: "Lucida Console", Courier, monospace;
+}
+.slider .buttons-search-style:hover {
+  background: none;
+  color: #300c08;
+}
+.slider .button-choice-slider {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.slider .button-choice-slider button {
+  color: #300c08;
+  font-family: "Lucida Console", Courier, monospace;
+}

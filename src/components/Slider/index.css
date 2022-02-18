@@ -1,0 +1,36 @@
+.emphasis {
+  margin-top: 5.5em;
+  background-color: transparent;
+}
+/* https://monophy.com/media/ip68eDWiINMQh3qysS/monophy.gif */
+.gif {
+  background-image: url("https://freight.cargo.site/t/original/i/16fe4fa6beff8efe5b99c160c0274daa9ed5be1123a7091b27c47dabd25ca0f6/Untitled-15.gif");
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.emphasis .paper {
+  background-color: #ca4e79;
+}
+.emphasis .title-champss {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #e2e2e2;
+  padding-top: 14em;
+}
+
+.slider .img {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  animation-timing-function: ease;
+}
+.slider .img:hover {
+  transform: scale(1.2);
+}
+
+.slider .swiper {
+  margin-bottom: 15em;
+}
