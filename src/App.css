@@ -1,6 +1,10 @@
 body {
   background-color: #000913;
+  font-family: "Shizuru", cursive !important;
   color: #fff;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .App {

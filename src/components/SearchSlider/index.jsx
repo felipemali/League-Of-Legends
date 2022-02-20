@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container, Paper } from "@mui/material";
-import { Search } from "@mui/icons-material";
+import { PinDropSharp, Search } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import "./index.css";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
-const SearchSlider = () => {
+const SearchSlider = (props) => {
+  const [search, setSearch] = useState();
+
+  const updateSearch = (value) => {
+    setSearch(value);
+    props.setSearch(value);
+  };
+
   const pages = [
     "Todos",
     "Assassinos",
@@ -57,7 +64,6 @@ const SearchSlider = () => {
     <Paper>
       <div className="slider-search">
         <div className="input-search">
-          {/* <input type="text" placeholder="Search" /> */}
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -65,7 +71,15 @@ const SearchSlider = () => {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              onChange={(e) => updateSearch(e.target.value)}
+              value={search}
+              autoFocus={true}
             />
+            {/* <input
+            type="text"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          /> */}
             <span style={{ borderRight: "1px solid gray" }}></span>
           </Search>
         </div>

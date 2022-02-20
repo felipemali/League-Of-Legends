@@ -1,0 +1,31 @@
+.container-stats {
+  border: 3px double #913359;
+  margin-top: 2em;
+  margin-left: 3em;
+  text-align: start;
+  width: 33%;
+  height: 100%;
+}
+
+.stats .list-atributte-champ {
+  display: flex;
+}
+.list-atributte-champ .list {
+  list-style-type: none;
+}
+.list-atributte-champ .list .atributte {
+    padding-bottom: 1em;
+  }
+  .indic {
+    animation: effect-arrow 1s ease-in-out alternate infinite;
+    vertical-align: middle;
+    padding-right: 0.5em;
+  }
+  @keyframes effect-arrow {
+    to {
+      transform: translateX(5px);
+    }
+  }
+  .atributte .color-stats {
+    color: gold;
+  }

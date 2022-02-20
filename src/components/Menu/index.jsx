@@ -15,13 +15,32 @@ import "./index.css";
 import Logo from "../../imgs/logo.png";
 
 const pages = [
-  "The game",
-  "Champs",
-  "update notes",
-  "community",
-  "sports",
-  "more",
+  {
+    name: "the game",
+    link: "",
+  },
+  {
+    name: "Champs",
+    link: "",
+  },
+  {
+    name: "update notes",
+    link: "",
+  },
+  {
+    name: "community",
+    link: "",
+  },
+  {
+    name: "sports",
+    link: "",
+  },
+  {
+    name: "more",
+    link: "",
+  },
 ];
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Menuu = () => {
@@ -88,8 +107,8 @@ const Menuu = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -111,18 +130,21 @@ const Menuu = () => {
           >
             {pages.map((page) => (
               <Button
+                href={page.link}
                 className="buttons-center"
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button className="button-session">{"Begin session"}</Button>
+            <Button className="button-session" href="#teste">
+              {"Begin session"}
+            </Button>
             <Button className="button-Play">{"Play now"}</Button>
 
             <Menu

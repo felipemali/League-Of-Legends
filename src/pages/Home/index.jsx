@@ -1,34 +1,54 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import Slider from "../../components/Slider";
 import Menu from "../../components/Menu";
 import InfoChamp from "../../components/InfoChamp";
+import axios from "axios";
 
 const Home = () => {
-  const [infoChamp, setInfoChamp] = useState([]);
-  const [atributtes, setAtributtes] = useState([]);
+  const [selectedChamp, setSelectedChamp] = useState();
+  const [champs, setChamps] = useState([]);
+  const [search, setSearch] = useState("");
 
-  const dataChamps = (name, title, blurb, atributtes) => {
-    try {
-      setInfoChamp([name, title, blurb]);
-      setAtributtes(atributtes);
-    } catch {
-      <h1>Erro</h1>;
-    }
-    // console.log(name);
-    // console.log(array);
-  };
-  // const champs = [
-  //   "https://www.pcgamesn.com/wp-content/uploads/2021/07/league-of-legends-ruined-miss-fortune.jpg",
-  //   "https://www.comboinfinito.com.br/principal/wp-content/uploads/2019/11/league-of-legends-4.jpg",
+  useEffect(() => {
+    axios
+      .get(
+        "http://ddragon.leagueoflegends.com/cdn/12.4.1/data/pt_BR/champion.json"
+      )
 
-  //   "https://cdn1.dotesports.com/wp-content/uploads/sites/3/2021/01/08131859/Viego.jpg",
-  //   "https://s2.glbimg.com/XOEHXkXa5x1xPQVOcmItUrJg92o=/0x0:1000x587/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/m/B/ykw3OyTWK0zxrvUXbrzg/0.jpg",
-  // ];
+      .then((response) => {
+        const data = Object.values(response.data.data).map((champ) => {
+          return {
+            id: champ.id,
+            name: champ.name,
+            title: champ.title,
+            resume: champ.blurb,
+            stats: champ.stats,
+          };
+        });
+        setChamps(data);
+      });
+  }, []);
+  const filter = champs.filter((champ) => {
+    return champ.name.toLowerCase().includes(search);
+  });
+  console.log(filter);
+
+  // const dataChamps = (name, title, blurb, atributtes) => {
+  //     setInfoChamp([name, title, blurb]);
+  //     setAtributtes(atributtes);
+  //     <h1>Erro</h1>;
+
+  //   }
+
   return (
     <div>
       <Menu />
-      <Slider dataChamps={dataChamps} />
-      <InfoChamp atributtes={atributtes} infoChamp={infoChamp} />
+      <Slider
+        champs={filter}
+        setSelectedChamp={setSelectedChamp}
+        setSearch={setSearch}
+      />
+      <InfoChamp champ={selectedChamp} />
     </div>
   );
 };

@@ -4,21 +4,41 @@ body {
 .title-champ {
   width: 80%;
 }
+.title-champ .container-bc-champ-selected {
+  display: flex;
+  justify-content: start;
+  width: 100vw;
+}
 .container-title-champ {
   display: flex;
   justify-content: center;
   height: 30vh;
   width: 100vw;
 }
+.title-champ .bc-champ-selected {
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.title-champ .bc-champ-selected .font-title {
+  font-size: 100px;
+}
+.name-caption-champ .font-sub-title {
+  font-size: 50px;
+  display: block;
+  padding-bottom: 1em;
+}
 .container-carrosel {
-  border: 1px solid #afa1eb;
+  margin-top: 45%;
 }
 .carrosel-skins {
-  width: 750px;
+  width: 830px;
   height: 300px;
 }
 .img-carrosel {
-  width: 310px;
+  width: 280px;
   height: 100%;
   transition: all 0.4s;
   animation-timing-function: ease;
@@ -30,8 +50,14 @@ body {
   width: 100%;
   height: 100%;
 }
-.img-champ .name-caption-champ {
-  border: 1px solid green;
+.name-caption-champ {
+  margin-bottom: 3em;
+  border-top: 1px solid #ffd026;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #ffd026;
+  border-radius: 15%;
+  background: transparent;
 }
 .animate .info-champ {
   display: flex;
@@ -54,7 +80,8 @@ body {
   background-size: 300% 300%;
   border: 2px double blueviolet;
   height: 300px;
-  width: 580px;
+  width: 33%;
+  margin-top: 45%;
 }
 .info-champ .sinopse:hover {
   background-color: #000913;
@@ -79,20 +106,7 @@ body {
   transform: scale(1.1);
 }
 
-.container-stats {
-  border: 3px double #913359;
-  margin-top: 2em;
-  margin-left: 6em;
-  text-align: start;
-  width: 33%;
-  height: 100%;
-}
-
 .stats {
-}
-
-.stats .list-atributte-champ {
-  display: flex;
 }
 
 .animate {
@@ -105,12 +119,6 @@ body {
   animation-fill-mode: forwards;
   /* animation: slide 3s forwards;  */
 }
-.list-atributte-champ .list {
-  list-style-type: none;
-}
-.list-atributte-champ .list .atributte {
-  padding-bottom: 1em;
-}
 
 @keyframes slide {
   from {
@@ -118,17 +126,4 @@ body {
   to {
     transform: translateY(0);
   }
-}
-.indic {
-  animation: effect-arrow 1s ease-in-out alternate infinite;
-  vertical-align: middle;
-  padding-right: 0.5em;
-}
-@keyframes effect-arrow {
-  to {
-    transform: translateX(5px);
-  }
-}
-.atributte .color-stats {
-  color: gold;
 }

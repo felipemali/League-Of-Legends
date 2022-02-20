@@ -3,38 +3,15 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./index.css";
 import SearchSlider from "./../SearchSlider";
-import axios from "axios";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Container } from "@mui/material";
+import { Container, Link } from "@mui/material";
 
 export default (props) => {
-  const [champs, setChamps] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(
-        "http://ddragon.leagueoflegends.com/cdn/12.4.1/data/pt_BR/champion.json"
-      )
-
-      .then((response) => {
-        setChamps(Object.values(response.data.data));
-      });
-  }, []);
-
-  // rodar o map dentro do useEffect
-  // cortar o tamanho da api
-  // tentar tirar o jpg ou o png dom retorno do map
-  // concatenação
-  const teste = (e) => {
-    console.log(e);
-    return e;
-  };
-  console.log(champs);
   return (
     <>
       <Container className="gif" maxWidth="false">
@@ -53,8 +30,8 @@ export default (props) => {
           </div>
         </Container>
       </Container>
-      <Container maxWidth="lg" className="slider">
-        <SearchSlider />
+      <Container maxWidth="lg" className="slider" id="teste">
+        <SearchSlider setSearch={props.setSearch} />
         <Swiper
           className="swiper"
           // install Swiper modules
@@ -64,27 +41,20 @@ export default (props) => {
           navigation
           onSlideChange={() => console.log("")}
         >
-          {champs.map((champ) => (
-            <SwiperSlide
-              onClick={() =>
-                props.dataChamps(
-                  champ.name,
-                  champ.title,
-                  champ.blurb,
-                  champ.stats
-                )
-              }
-            >
-              <img
-                key={champ.id}
-                className="img"
-                src={
-                  "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
-                  champ.name +
-                  "_1.jpg"
-                }
-                alt=""
-              />
+          {props.champs.map((champ) => (
+            <SwiperSlide onClick={() => props.setSelectedChamp(champ)}>
+              <Link href="#info-champ">
+                <img
+                  key={champ.id}
+                  className="img"
+                  src={
+                    "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
+                    champ.id +
+                    "_0.jpg"
+                  }
+                  alt=""
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
