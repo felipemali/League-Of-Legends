@@ -58,6 +58,7 @@ export default (props) => {
             </SwiperSlide>
           ))}
         </Swiper>
+
         {/* <div style={{ marginTop: "5em" }} className="animar"></div> */}
       </Container>
     </>

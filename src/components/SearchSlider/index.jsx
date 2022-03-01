@@ -69,7 +69,7 @@ const SearchSlider = (props) => {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search Champs…"
               inputProps={{ "aria-label": "search" }}
               onChange={(e) => updateSearch(e.target.value)}
               value={search}
@@ -80,7 +80,7 @@ const SearchSlider = (props) => {
             onChange={(e) => setSearch(e.target.value)}
             value={search}
           /> */}
-            <span style={{ borderRight: "1px solid gray" }}></span>
+            <span className="border-search"></span>
           </Search>
         </div>
         <div className="buttons-search">
@@ -93,15 +93,6 @@ const SearchSlider = (props) => {
               {page}
             </Button>
           ))}
-        </div>
-
-        <div className="button-choice-slider">
-          <span
-            style={{ borderLeft: "1px solid gray", paddingRight: "1em" }}
-          ></span>
-          <Button>
-            Todas Dificuldades <ArrowDownwardIcon />
-          </Button>
         </div>
       </div>
     </Paper>

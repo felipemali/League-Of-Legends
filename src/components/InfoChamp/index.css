@@ -22,13 +22,20 @@ body {
   align-items: flex-end;
   justify-content: center;
 }
+.name-caption-champ {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
 .title-champ .bc-champ-selected .font-title {
-  font-size: 100px;
+  font-size: 180px;
+  color: #fff;
 }
 .name-caption-champ .font-sub-title {
-  font-size: 50px;
+  font-size: 70px;
+  color: #fff;
   display: block;
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
 }
 .container-carrosel {
   margin-top: 45%;
@@ -50,15 +57,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.name-caption-champ {
-  margin-bottom: 3em;
-  border-top: 1px solid #ffd026;
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 1px solid #ffd026;
-  border-radius: 15%;
-  background: transparent;
-}
+
 .animate .info-champ {
   display: flex;
   justify-content: space-around;
@@ -66,7 +65,8 @@ body {
 .info-champ .blurb {
   padding: 0em 1em;
 }
-.info-champ .sinopse {
+
+/* .sinopse {
   animation: efeit 5s ease alternate infinite;
   background: linear-gradient(
       270deg,
@@ -79,11 +79,11 @@ body {
     no-repeat;
   background-size: 300% 300%;
   border: 2px double blueviolet;
-  height: 300px;
+  height: 100%;
+  min-height: 300px;
   width: 33%;
-  margin-top: 45%;
 }
-.info-champ .sinopse:hover {
+.sinopse:hover {
   background-color: #000913;
 }
 @keyframes efeit {
@@ -93,7 +93,7 @@ body {
   to {
     background-position: 100% 50%;
   }
-}
+} */
 .info-champ .img-champs {
   width: 500px;
   height: 280px;
@@ -104,6 +104,22 @@ body {
 .info-champ .img-champs:hover {
   box-shadow: 1px 5px 40px 0px #616296;
   transform: scale(1.1);
+}
+.container-img-champ-info {
+  margin-top: 7%;
+  margin-left: 15%;
+  width: 500px;
+  height: 250px;
+}
+.img-champ-info {
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  animation-timing-function: ease;
+}
+.img-champ-info:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .stats {
@@ -125,5 +141,155 @@ body {
   }
   to {
     transform: translateY(0);
+  }
+}
+.container-skills {
+  /* transition: 0.6s;
+  animation: efeit-skills 5s ease alternate infinite;
+  background: linear-gradient(
+      5deg,
+      #1a71a3 0,
+      #183c57 25%,
+      #000913 50%,
+      #000000 75%,
+      #000000 100%
+    )
+    no-repeat;
+  background-size: 300% 300%; */
+  /* border: 1px solid blue; */
+
+  margin-top: 3em;
+  width: 10%;
+}
+.container-info .swiper-skills {
+  width: 30%;
+}
+.border-bottom-skills {
+  border: 1px solid #8c8377;
+  width: 100%;
+}
+
+.container-skills:hover {
+  transform: scale(1);
+  cursor: pointer;
+}
+
+@keyframes efeit-skills {
+  from {
+    background-position: 50% 0;
+  }
+  to {
+    background-position: 50% 100%;
+  }
+}
+
+.container-info {
+  display: flex;
+  align-items: center;
+  margin-top: 100vh;
+}
+.container-skills .img-skills {
+  width: 60%;
+  height: 30%;
+  margin-left: 0.3em;
+  margin-bottom: 3em;
+  border: 1px solid #22284a;
+  transition: 0.6s;
+  animation-timing-function: ease;
+}
+.description .title-skill {
+  color: gold;
+}
+.container-skills .img-skills:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.container-description {
+  display: flex;
+  width: 30%;
+}
+.container-description .description {
+  font-family: Spiegel, "Arial Narrow", Arial, sans-serif;
+  text-align: start;
+  padding-left: 0.5em;
+  height: 100%;
+}
+.animate .title-skills {
+  font-family: "Beaufort for LOL", serif;
+  font-style: italic;
+  margin-top: 9%;
+  font-size: 40px;
+  text-align: start;
+}
+
+@media (max-width: 800px) {
+  .container-title-champ {
+    display: flex;
+    justify-content: start;
+    height: 30vh;
+    width: 100vw;
+  }
+  .title-champ .bc-champ-selected {
+    width: 10%;
+    height: 700px;
+  }
+  .font-title {
+    font-size: 60px;
+    color: #fff;
+  }
+  .name-caption-champ .font-sub-title {
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    padding-bottom: 0.5em;
+  }
+  .animate .title-skills {
+    font-family: "Beaufort for LOL", serif;
+    font-style: italic;
+    margin-top: 5em;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .container-description {
+    display: flex;
+    width: 70%;
+  }
+  .container-img-champ-info {
+    display: none;
+  }
+  .container-skills {
+    margin-top: 15em;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container-skills .img-skills {
+    width: 70px;
+    height: 80px;
+    margin-bottom: 3em;
+    border: 1px solid #22284a;
+    transition: 0.6s;
+    animation-timing-function: ease;
+  }
+
+  .container-info {
+    display: flex;
+    align-items: center;
+    margin-top: 70vh;
+  }
+
+  .animate {
+    background-color: #000913;
+    background-repeat: repeat-x;
+    animation-name: slide;
+    transform: translateY(-100px);
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+
+    /* animation: slide 3s forwards;  */
   }
 }

@@ -41,3 +41,12 @@
   color: #ffcd63;
   border: 1px solid gray;
 }
+
+@media (max-width: 975px) {
+  .img-logo-sx {
+    margin-right: 3em;
+    cursor: pointer;
+    height: 50px;
+    width: 80;
+  }
+}

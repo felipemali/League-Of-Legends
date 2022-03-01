@@ -13,6 +13,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import "./index.css";
 import Logo from "../../imgs/logo.png";
+import LogoTwo from "../../imgs/logo22.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const pages = [
   {
@@ -61,6 +63,7 @@ const Menuu = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const matches = useMediaQuery("(max-width:975px)");
 
   //https://pentagram-production.imgix.net/cc7fa9e7-bf44-4438-a132-6df2b9664660/EMO_LOL_02.jpg?rect=0%2C0%2C1440%2C1512&w=640&crop=1&fm=jpg&q=70&auto=format&fit=crop&h=672
 
@@ -77,49 +80,13 @@ const Menuu = () => {
             <img className="img-logo-md" src={Logo} alt="" />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.name}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            LOGO
+            <img className="img-logo-sx" src={Logo} alt="" />
           </Typography>
           <Box
             className="box-buttons"
@@ -142,10 +109,15 @@ const Menuu = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Button className="button-session" href="#teste">
+            {/* <Button className="button-session" href="#teste">
               {"Begin session"}
             </Button>
-            <Button className="button-Play">{"Play now"}</Button>
+            <Button className="button-Play">{"Play now"}</Button> */}
+            {matches ? (
+              <img className="img-logo-sx" src={LogoTwo} alt="" />
+            ) : (
+              ""
+            )}
 
             <Menu
               sx={{ mt: "45px" }}
@@ -166,6 +138,42 @@ const Menuu = () => {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>

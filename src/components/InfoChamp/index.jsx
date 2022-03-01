@@ -2,20 +2,24 @@ import { Container } from "@mui/material";
 import react, { useEffect, useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import SwiperCore, { Autoplay } from "swiper";
 import "./index.css";
 
 import axios from "axios";
 import AtributteList from "../AtributteList";
+import SkinsDisposable from "../SkinsDisposable";
 
 const InfoChamp = (props) => {
-  const [infoChamp, setInfoChamp] = useState();
-  const letters = ["Q", "W", "E"];
+  const [infoChamp, setInfoChamp] = useState("");
+  const [textSkills, setTextSkills] = useState(false);
+  const [text, setText] = useState("");
 
   useEffect(() => {
     if (props.champ) {
       axios
         .get(
-          `http://ddragon.leagueoflegends.com/cdn/12.4.1/data/en_US/champion/${props.champ.id}.json`
+          `http://ddragon.leagueoflegends.com/cdn/12.4.1/data/pt_BR/champion/${props.champ.id}.json`
         )
 
         .then((response) => {
@@ -27,69 +31,104 @@ const InfoChamp = (props) => {
   if (!props.champ) {
     return <span>selecione um Champ</span>;
   }
-  console.log(props.champ.name);
 
+  const ocultText = (description, name) => {
+    setText({
+      description: description,
+      name: name,
+    });
+    textSkills == false ? setTextSkills(true) : setTextSkills(false);
+  };
+  // console.log(infoChamp.skins);
+  // console.log(infoChamp.spells);
+  SwiperCore.use([Autoplay]);
   return (
-    <Container maxWidth="false" className="animate">
-      <div className="container-title-champ">
-        <div className="title-champ">
-          <div
-            className="bc-champ-selected"
-            id="info-champ"
-            style={{
-              background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg") no-repeat center center`,
-            }}
-          >
-            <div className="name-caption-champ">
-              <span className="font-title">{props.champ.name}</span>
-              <span className="font-sub-title">{props.champ.title}</span>
+    <>
+      <Container maxWidth="xl" className="animate">
+        <div className="container-title-champ">
+          <div className="title-champ">
+            <Container maxWidth="string">
+              <div
+                className="bc-champ-selected"
+                id="info-champ"
+                // style={{
+                //   background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg") no-repeat center center`,
+                // }}
+              >
+                <img
+                  src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg`}
+                  alt=""
+                />
+              </div>
+              <div className="name-caption-champ">
+                <span className="font-title" style={{ fontSize: "60px" }}>
+                  {props.champ.name}
+                </span>
+                <span className="font-sub-title">{props.champ.title}</span>
+              </div>
+            </Container>
+            <div className="title-skills">
+              <h1>Habilidades</h1>
             </div>
           </div>
         </div>
-      </div>
-      <div className="info-champ">
-        <div className="sinopse">
-          <h2>Sinopse</h2>
-          <h4 className="blurb">{props.champ.resume}</h4>
-        </div>
 
-        <div className="container-carrosel">
-          <Swiper
-            className="carrosel-skins"
-            // install Swiper modules
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={3}
-            navigation
-          >
-            {infoChamp?.skins?.map((skin) => (
-              <SwiperSlide>
+        <Container maxWidth="lg">
+          <div className="container-info">
+            {infoChamp?.spells?.map((e) => (
+              <div className="container-skills">
                 <img
-                  className="img-carrosel"
-                  src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_${skin.num}.jpg`}
+                  className="img-skills"
+                  onClick={() => ocultText(e.description, e.name)}
+                  src={`https://ddragon.leagueoflegends.com/cdn/12.4.1/img/spell/${e.id}.png`}
+                  alt=""
                 />
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
-        </div>
-      </div>
-      <AtributteList
-        hp={props.champ.stats.hp}
-        hpperlevel={props.champ.stats.hpperlevel}
-        movespeed={props.champ.stats.movespeed}
-        armor={props.champ.stats.armor}
-        crit={props.champ.stats.crit}
-        attackdamage={props.champ.stats.attackdamage}
-        attackspeed={props.champ.stats.attackspeed}
-      />
 
-      {letters.map((e) => (
-        <img
-          src={`https://ddragon.leagueoflegends.com/cdn/12.4.1/img/spell/${props.champ.name}${e}.png`}
-          alt=""
+            <div className="container-img-champ-info">
+              <img
+                className="img-champ-info"
+                src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_1.jpg`}
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className="container-description">
+            <div className="description">
+              <h2 className="title-skill">{text.name}</h2>
+              <h4>{text.description}</h4>
+            </div>
+          </div>
+
+          <AtributteList
+            id={props.champ.id}
+            champ={props.champ}
+            hp={props.champ.stats.hp}
+            hpperlevel={props.champ.stats.hpperlevel}
+            movespeed={props.champ.stats.movespeed}
+            armor={props.champ.stats.armor}
+            crit={props.champ.stats.crit}
+            attackdamage={props.champ.stats.attackdamage}
+            attackspeed={props.champ.stats.attackspeed}
+            infoChamp={infoChamp}
+          />
+          {/* <div className="container-sinopse">
+              <div className="sinopse">
+                <h2>Sinopse</h2>
+                <h4 className="blurb">{props.champ.resume}</h4>
+              </div>
+            </div>
+          */}
+        </Container>
+        <SkinsDisposable
+          champ={props.champ.id}
+          infoChamp={infoChamp}
+          numbers={infoChamp.skins}
         />
-      ))}
-    </Container>
+      </Container>
+    </>
   );
 };
 

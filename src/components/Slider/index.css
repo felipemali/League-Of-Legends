@@ -1,14 +1,15 @@
 .emphasis {
-  margin-top: 5.5em;
   background-color: transparent;
 }
 /* https://monophy.com/media/ip68eDWiINMQh3qysS/monophy.gif */
-.gif {
-  background-image: url("https://freight.cargo.site/t/original/i/16fe4fa6beff8efe5b99c160c0274daa9ed5be1123a7091b27c47dabd25ca0f6/Untitled-15.gif");
-  background-size: cover;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
+@media (min-width: 800px) {
+  .gif {
+    background-image: url("https://freight.cargo.site/t/original/i/16fe4fa6beff8efe5b99c160c0274daa9ed5be1123a7091b27c47dabd25ca0f6/Untitled-15.gif");
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .emphasis .paper {
@@ -33,4 +34,18 @@
 
 .slider .swiper {
   margin-bottom: 15em;
+}
+@media (max-width: 500px) {
+  .slider .img {
+    cursor: pointer;
+    height: 100px;
+    width: 105px;
+    transition: all 0.4s;
+    animation-timing-function: ease;
+  }
+  .gif {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://nexus.leagueoflegends.com/wp-content/uploads/2018/05/LOL_CMS_209_Article_01_kws3tppfg8hn2hwnqtj2.jpg");
+  }
 }
