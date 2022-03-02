@@ -35,7 +35,7 @@
 .slider .swiper {
   margin-bottom: 15em;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .slider .img {
     cursor: pointer;
     height: 100px;
@@ -47,6 +47,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("https://nexus.leagueoflegends.com/wp-content/uploads/2018/05/LOL_CMS_209_Article_01_kws3tppfg8hn2hwnqtj2.jpg");
+  }
+  .slider .swiper {
+    margin-bottom: 10em;
   }
   .emphasis .title-champss {
     /* font-family: Verdana, Arial, Helvetica, sans-serif; */

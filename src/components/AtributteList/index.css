@@ -23,8 +23,11 @@
 .title-stats {
   display: flex;
   justify-content: start;
+  width: 100%;
   margin-top: 2em;
   font-size: 30px;
+  background-color: #b9c8ff;
+  color: black;
 }
 @keyframes effect-arrow {
   to {
@@ -35,13 +38,7 @@
   color: gold;
 }
 
-@media (max-width: 975px) {
-  .title-stats {
-    display: flex;
-    justify-content: start;
-    margin-top: 2em;
-    font-size: 30px;
-  }
+@media (max-width: 1024px) {
   .stats .list-atributte-champ {
     display: block;
   }
@@ -51,6 +48,19 @@
     margin-bottom: 4em;
     text-align: start;
     width: 100%;
+    height: 100%;
+  }
+}
+@media (width: 1024px) {
+  .stats .list-atributte-champ {
+    display: flex;
+  }
+  .container-stats {
+    border: 3px double #913359;
+    margin-top: 3em;
+    margin-bottom: 4em;
+    text-align: start;
+    width: 60%;
     height: 100%;
   }
 }

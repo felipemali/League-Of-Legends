@@ -18,6 +18,7 @@ const SkinsDisposable = (props) => {
   const [skinBackground, setSkinBackground] = useState();
   const [nameSkin, setNameSkin] = useState();
   const matches = useMediaQuery("(max-width:975px)");
+  const buttonPlayNow = useMediaQuery("(max-width:1019px)");
 
   console.log(matches);
 
@@ -137,7 +138,7 @@ const SkinsDisposable = (props) => {
         ""
       )}
 
-      {matches ? (
+      {buttonPlayNow ? (
         <div style={{ marginTop: "15vh" }}>
           <Button
             style={{ marginBottom: "3em", color: "gold" }}

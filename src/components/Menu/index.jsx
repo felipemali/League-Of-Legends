@@ -63,7 +63,8 @@ const Menuu = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const matches = useMediaQuery("(max-width:975px)");
+  const matches = useMediaQuery("(max-width:899px)");
+  const twoButtonsMenu = useMediaQuery("(min-width:1020px)");
 
   //https://pentagram-production.imgix.net/cc7fa9e7-bf44-4438-a132-6df2b9664660/EMO_LOL_02.jpg?rect=0%2C0%2C1440%2C1512&w=640&crop=1&fm=jpg&q=70&auto=format&fit=crop&h=672
 
@@ -109,10 +110,17 @@ const Menuu = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Button className="button-session" href="#teste">
-              {"Begin session"}
-            </Button>
-            <Button className="button-Play">{"Play now"}</Button> */}
+            {twoButtonsMenu ? (
+              <div>
+                <Button className="button-session" href="#teste">
+                  {"Begin session"}
+                </Button>
+                <Button className="button-Play">{"Play now"}</Button>
+              </div>
+            ) : (
+              ""
+            )}
+
             {matches ? (
               <img className="img-logo-sx" src={LogoTwo} alt="" />
             ) : (

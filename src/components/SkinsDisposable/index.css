@@ -88,9 +88,8 @@
     display: none;
   }
   .name-skins {
+    width: 110px;
     display: block;
-    padding-left: 0.3em;
-    margin-left: 2em;
   }
   .bc-mobile {
     width: 100%;
@@ -133,6 +132,22 @@
     animation: effect-button 1s ease-in-out alternate infinite;
     vertical-align: middle;
     width: 60%;
+    padding: 0.5em;
+    margin-bottom: 3em;
+    box-shadow: inset 0 0 0em #f3eae8, 0 0 1em #908eee;
+    color: gold;
+  }
+  @keyframes effect-button {
+    to {
+      transform: translateY(10px);
+    }
+  }
+}
+@media (min-width: 802px) and (max-width: 1019px) {
+  .button-playNow {
+    animation: effect-button 1s ease-in-out alternate infinite;
+    vertical-align: middle;
+    width: 30%;
     padding: 0.5em;
     margin-bottom: 3em;
     box-shadow: inset 0 0 0em #f3eae8, 0 0 1em #908eee;

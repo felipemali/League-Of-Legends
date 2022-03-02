@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import react, { useEffect, useState } from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
@@ -29,7 +29,14 @@ const InfoChamp = (props) => {
   }, [props.champ]);
 
   if (!props.champ) {
-    return <span>selecione um Champ</span>;
+    return (
+      <Button
+        style={{ marginBottom: "3em", color: "gold" }}
+        className="button-select-champ"
+      >
+        Selecione um Campeão
+      </Button>
+    );
   }
 
   const ocultText = (description, name) => {
@@ -49,37 +56,47 @@ const InfoChamp = (props) => {
         <div className="container-title-champ">
           <div className="title-champ">
             <Container maxWidth="string">
-              <div
-                className="bc-champ-selected"
-                id="info-champ"
-                // style={{
-                //   background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg") no-repeat center center`,
-                // }}
-              >
+              <div className="bc-champ-selected" id="info-champ">
                 {matches ? (
-                  <img
-                    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.champ.id}_0.jpg`}
-                    alt=""
-                  />
+                  <div
+                    className="container-title-subtitle-champ"
+                    style={{
+                      background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.champ.id}_0.jpg") no-repeat center center`,
+                    }}
+                  >
+                    <span className="font-sub-title-mobile">
+                      {props.champ.title}
+                    </span>
+                    <span className="font-title-mobile">
+                      {props.champ.name}
+                    </span>
+                  </div>
                 ) : (
-                  <img
+                  <div
+                    className="bc-champ-selected"
+                    style={{
+                      background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg") no-repeat center center`,
+                    }}
+                  >
+                    <div className="name-caption-champ">
+                      <span className="font-title" style={{ fontSize: "60px" }}>
+                        {props.champ.name}
+                      </span>
+                      <span className="font-sub-title">
+                        {props.champ.title}
+                      </span>
+                    </div>
+
+                    {/* <img
                     src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg`}
                     alt=""
-                  />
+                  /> */}
+                  </div>
                 )}
-              </div>
-              <div className="name-caption-champ">
-                <span
-                  className="font-title"
-                  style={{ fontSize: "60px", color: "gold" }}
-                >
-                  {props.champ.name}
-                </span>
-                <span className="font-sub-title">{props.champ.title}</span>
               </div>
             </Container>
             <div className="title-skills">
-              <h1>Habilidades</h1>
+              <span>Habilidades</span>
             </div>
           </div>
         </div>

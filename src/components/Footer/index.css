@@ -1,0 +1,74 @@
+.footer {
+  height: 100%;
+  margin-top: 15em;
+  background-color: black;
+}
+.footer .buttons {
+  padding-top: 2em;
+}
+
+.footer .buttons .icone {
+  background-color: #fff;
+  margin-left: 1em;
+  border-radius: 15%;
+}
+.buttons .icone .img-icone {
+  size: 10px;
+}
+.buttons .icone .img-icone {
+  margin-top: 0.2em;
+}
+.container-icone-riot-games .icone-riot-games {
+  opacity: 0.5;
+  width: 20%;
+  height: 15%;
+}
+.container-icone-riot-games .icone-riot-games:hover {
+  opacity: 1;
+}
+.footer .direitos-reservados {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 12px;
+  opacity: 0.5;
+}
+.footer .minimum-age {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  display: flex;
+  padding: 0.5em;
+  border-radius: 3%;
+  background-color: #353440;
+  width: 20%;
+}
+.minimum-age .button {
+  background-color: yellow;
+  color: #fff;
+}
+.minimum-age .button:hover {
+  background: yellow;
+  cursor: pointer;
+}
+.footer .about-the-contents {
+  display: block;
+  text-align: start;
+  padding-left: 0.5em;
+}
+@media (max-width: 900px) {
+  .footer {
+    height: 100%;
+    margin-top: 6em;
+    background-color: black;
+  }
+  .footer .minimum-age {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    display: flex;
+    padding: 0.5em;
+    border-radius: 3%;
+    background-color: #353440;
+    width: 55%;
+    padding-bottom: 1em;
+  }
+}

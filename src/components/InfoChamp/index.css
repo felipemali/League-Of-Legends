@@ -17,6 +17,7 @@ body {
 }
 .title-champ .bc-champ-selected {
   height: 100vh;
+  width: 100%;
   background-size: cover;
   display: flex;
   align-items: flex-end;
@@ -25,17 +26,20 @@ body {
 .name-caption-champ {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  margin-left: 0.5em;
+  margin-bottom: 3em;
 }
 
-.title-champ .bc-champ-selected .font-title {
+.name-caption-champ .font-title {
   font-size: 180px;
   color: #fff;
 }
 .name-caption-champ .font-sub-title {
-  font-size: 70px;
+  font-size: 40px;
   color: #fff;
   display: block;
   padding-bottom: 0.5em;
+  color: #fff;
 }
 .container-carrosel {
   margin-top: 45%;
@@ -86,14 +90,8 @@ body {
 .sinopse:hover {
   background-color: #000913;
 }
-@keyframes efeit {
-  from {
-    background-position: 0 50%;
-  }
-  to {
-    background-position: 100% 50%;
-  }
-} */
+*/
+
 .info-champ .img-champs {
   width: 500px;
   height: 280px;
@@ -161,6 +159,7 @@ body {
   margin-top: 3em;
   width: 10%;
 }
+
 .container-info .swiper-skills {
   width: 30%;
 }
@@ -216,42 +215,71 @@ body {
   height: 100%;
 }
 .animate .title-skills {
-  font-family: "Beaufort for LOL", serif;
-  font-style: italic;
-  margin-top: 9%;
-  font-size: 40px;
+  width: 91%;
+  margin-top: 20%;
+  font-size: 30px;
   text-align: start;
+  background-color: #b9c8ff;
+  color: black;
+}
+.button-select-champ {
+  animation: effect-button-select-champ 1s ease-in-out alternate infinite;
+  vertical-align: middle;
+  width: 15%;
+  padding: 0.5em;
+  margin-bottom: 3em;
+  box-shadow: inset 0 0 0em #f3eae8, 0 0 1em #908eee;
+  color: gold;
+}
+@keyframes effect-button-select-champ {
+  to {
+    transform: translateY(10px);
+  }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 975px) {
   .container-title-champ {
     display: flex;
     justify-content: start;
     height: 10vh;
     width: 100vw;
   }
+  .name-caption-champ {
+    display: none;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    background-color: #fff;
+    width: 18.5em;
+    margin-right: 2em;
+  }
+
   .title-champ .bc-champ-selected {
+  }
+  .container-title-subtitle-champ {
     margin-left: 1.5em;
-    width: 100%;
-    height: 700px;
+    height: 100vh;
   }
-  .font-title {
+  .font-title-mobile {
+    margin-top: auto;
     font-size: 60px;
-    color: #fff;
+    color: gold;
   }
-  .name-caption-champ .font-sub-title {
-    font-size: 20px;
+  .font-sub-title-mobile {
+    margin-top: 10em;
+    font-size: 30px;
     color: gold;
     display: block;
     padding-bottom: 0.5em;
   }
   .animate .title-skills {
-    font-family: "Beaufort for LOL", serif;
-    font-style: italic;
-    margin-top: 5em;
-    font-size: 20px;
+    margin-left: 0.7em;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    margin-top: 2em;
+    font-size: 30px;
+    background-color: #b9c8ff;
+    color: black;
   }
   .container-description {
     display: flex;
@@ -279,8 +307,7 @@ body {
   .container-info {
     display: flex;
     align-items: center;
-    margin-top: 90vh;
-    background-color: #fff;
+    margin-top: 80vh;
   }
 
   .animate {
@@ -294,5 +321,16 @@ body {
     overflow: hidden;
 
     /* animation: slide 3s forwards;  */
+  }
+}
+@media (max-width: 480px) {
+  .button-select-champ {
+    animation: effect-button-select-champ 1s ease-in-out alternate infinite;
+    vertical-align: middle;
+    width: 50%;
+    padding: 0.5em;
+    margin-bottom: 3em;
+    box-shadow: inset 0 0 0em #f3eae8, 0 0 1em #908eee;
+    color: gold;
   }
 }

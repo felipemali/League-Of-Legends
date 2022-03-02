@@ -3,6 +3,7 @@ import Slider from "../../components/Slider";
 import Menu from "../../components/Menu";
 import InfoChamp from "../../components/InfoChamp";
 import axios from "axios";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   const [selectedChamp, setSelectedChamp] = useState();
@@ -49,6 +50,7 @@ const Home = () => {
         setSearch={setSearch}
       />
       <InfoChamp champ={selectedChamp} />
+      <Footer />
     </div>
   );
 };
