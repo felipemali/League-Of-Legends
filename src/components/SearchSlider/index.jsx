@@ -71,7 +71,7 @@ const SearchSlider = (props) => {
             <StyledInputBase
               placeholder="Search Champs…"
               inputProps={{ "aria-label": "search" }}
-              onChange={(e) => updateSearch(e.target.value)}
+              onChange={(e) => updateSearch(e.target.value.toLocaleLowerCase())}
               value={search}
               autoFocus={true}
             />

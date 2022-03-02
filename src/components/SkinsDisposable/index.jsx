@@ -16,6 +16,7 @@ import { Box } from "@mui/system";
 const SkinsDisposable = (props) => {
   const [skin, setSkin] = useState(0);
   const [skinBackground, setSkinBackground] = useState();
+  const [nameSkin, setNameSkin] = useState();
   const matches = useMediaQuery("(max-width:975px)");
 
   console.log(matches);
@@ -44,11 +45,12 @@ const SkinsDisposable = (props) => {
                 className="carrosel-skins"
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={20}
+                spaceBetween={30}
                 onSlideChange={function (name) {
                   setSkinBackground(
                     props.infoChamp.skins[name.activeIndex].num
                   );
+                  setNameSkin(props.infoChamp.skins[name.activeIndex].name);
                 }}
                 slidesPerView={3}
                 autoplay={{
@@ -66,6 +68,7 @@ const SkinsDisposable = (props) => {
                       className="img-carrosel-vertical"
                       src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skin.num}.jpg`}
                     />
+                    <span className="name-skin-md">{skin.name}</span>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -77,9 +80,7 @@ const SkinsDisposable = (props) => {
                 background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skinBackground}.jpg") no-repeat center center`,
                 height: "90vh",
               }}
-            >
-              <div className="name-skin">aaaaaaaaa</div>
-            </div>
+            ></div>
           </div>
         </Container>
       )}
@@ -110,6 +111,7 @@ const SkinsDisposable = (props) => {
           spaceBetween={50}
           onSlideChange={function (name) {
             setSkinBackground(props.infoChamp.skins[name.activeIndex].num);
+            setNameSkin(props.infoChamp.skins[name.activeIndex].name);
           }}
           slidesPerView={3}
           autoplay={{
@@ -120,13 +122,14 @@ const SkinsDisposable = (props) => {
           {props.infoChamp?.skins?.map((skin) => (
             <SwiperSlide
               className="container-img-carrosel-verticall"
-              onSlideChange={skin.num}
+              onSlideChange={skin}
             >
               <img
                 onClick={() => teste(skin.num, skin.name)}
                 className="img-carrosel-vertical"
                 src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skin.num}.jpg`}
               />
+              <span className="name-skins">{skin.name}</span>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -135,7 +138,7 @@ const SkinsDisposable = (props) => {
       )}
 
       {matches ? (
-        <div style={{ marginTop: "30vh" }}>
+        <div style={{ marginTop: "15vh" }}>
           <Button
             style={{ marginBottom: "3em", color: "gold" }}
             className="button-playNow"

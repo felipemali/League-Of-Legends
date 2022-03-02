@@ -80,20 +80,17 @@
   animation-timing-function: ease-in-out;
 }
 
-.name-skin {
-  display: flex;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 0.5em;
-  font-size: 60px;
-  color: #fff4c9;
-  box-shadow: inset 0 0 0em #f3eae8, 0 0 1em;
+.name-skin-md {
 }
 
 @media (max-width: 800px) {
   .container-skins {
     display: none;
+  }
+  .name-skins {
+    display: block;
+    padding-left: 0.3em;
+    margin-left: 2em;
   }
   .bc-mobile {
     width: 100%;
@@ -114,7 +111,7 @@
     box-shadow: inset 0 0 0em #f3eae8, 0 0 1em #908eee;
   }
   .title-Skins-disponíveis-mobile {
-    font-size: 40px;
+    font-size: 30px;
   }
   .name-skinn {
     display: flex;

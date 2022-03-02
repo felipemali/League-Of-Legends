@@ -1,7 +1,5 @@
 import { Container } from "@mui/material";
 import react, { useEffect, useState } from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import SwiperCore, { Autoplay } from "swiper";
 import "./index.css";
@@ -9,11 +7,13 @@ import "./index.css";
 import axios from "axios";
 import AtributteList from "../AtributteList";
 import SkinsDisposable from "../SkinsDisposable";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const InfoChamp = (props) => {
   const [infoChamp, setInfoChamp] = useState("");
   const [textSkills, setTextSkills] = useState(false);
   const [text, setText] = useState("");
+  const matches = useMediaQuery("(max-width:975px)");
 
   useEffect(() => {
     if (props.champ) {
@@ -42,6 +42,7 @@ const InfoChamp = (props) => {
   // console.log(infoChamp.skins);
   // console.log(infoChamp.spells);
   SwiperCore.use([Autoplay]);
+
   return (
     <>
       <Container maxWidth="xl" className="animate">
@@ -55,13 +56,23 @@ const InfoChamp = (props) => {
                 //   background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg") no-repeat center center`,
                 // }}
               >
-                <img
-                  src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg`}
-                  alt=""
-                />
+                {matches ? (
+                  <img
+                    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.champ.id}_0.jpg`}
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg`}
+                    alt=""
+                  />
+                )}
               </div>
               <div className="name-caption-champ">
-                <span className="font-title" style={{ fontSize: "60px" }}>
+                <span
+                  className="font-title"
+                  style={{ fontSize: "60px", color: "gold" }}
+                >
                   {props.champ.name}
                 </span>
                 <span className="font-sub-title">{props.champ.title}</span>
