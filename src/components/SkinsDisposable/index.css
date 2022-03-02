@@ -144,6 +144,9 @@
   }
 }
 @media (min-width: 802px) and (max-width: 1019px) {
+  .title-Skins-disponíveis-mobile {
+    font-size: 30px;
+  }
   .button-playNow {
     animation: effect-button 1s ease-in-out alternate infinite;
     vertical-align: middle;
