@@ -13,7 +13,7 @@ const InfoChamp = (props) => {
   const [infoChamp, setInfoChamp] = useState("");
   const [textSkills, setTextSkills] = useState(false);
   const [text, setText] = useState("");
-  const matches = useMediaQuery("(max-width:975px)");
+  const matches = useMediaQuery("(max-width:767px)");
 
   useEffect(() => {
     if (props.champ) {

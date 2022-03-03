@@ -72,3 +72,16 @@
     padding-bottom: 1em;
   }
 }
+@media (max-width: 320px) {
+  .footer .minimum-age {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    display: flex;
+    padding: 0.5em;
+    border-radius: 3%;
+    background-color: #353440;
+    width: 60%;
+    padding-bottom: 1em;
+  }
+}

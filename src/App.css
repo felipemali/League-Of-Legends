@@ -2,6 +2,7 @@ body {
   background-color: #000913;
   font-family: "Teko", sans-serif !important;
   color: #fff;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
