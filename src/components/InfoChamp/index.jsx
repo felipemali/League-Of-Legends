@@ -86,11 +86,6 @@ const InfoChamp = (props) => {
                         {props.champ.title}
                       </span>
                     </div>
-
-                    {/* <img
-                    src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg`}
-                    alt=""
-                  /> */}
                   </div>
                 )}
               </div>

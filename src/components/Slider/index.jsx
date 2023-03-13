@@ -48,7 +48,7 @@ export default (props) => {
                   key={champ.id}
                   className="img"
                   src={
-                    "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
+                    "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
                     champ.id +
                     "_0.jpg"
                   }
