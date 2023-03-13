@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     axios
       .get(
-        "http://ddragon.leagueoflegends.com/cdn/12.4.1/data/pt_BR/champion.json"
+        "https://ddragon.leagueoflegends.com/cdn/12.4.1/data/pt_BR/champion.json"
       )
 
       .then((response) => {

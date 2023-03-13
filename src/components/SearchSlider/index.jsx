@@ -51,7 +51,6 @@ const SearchSlider = (props) => {
     color: "inherit",
     "& .MuiInputBase-input": {
       padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
       width: "100%",
@@ -75,11 +74,7 @@ const SearchSlider = (props) => {
               value={search}
               autoFocus={true}
             />
-            {/* <input
-            type="text"
-            onChange={(e) => setSearch(e.target.value)}
-            value={search}
-          /> */}
+
             <span className="border-search"></span>
           </Search>
         </div>
