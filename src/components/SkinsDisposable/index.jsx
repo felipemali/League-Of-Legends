@@ -67,7 +67,7 @@ const SkinsDisposable = (props) => {
                     <img
                       onClick={() => teste(skin.num, skin.name)}
                       className="img-carrosel-vertical"
-                      src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skin.num}.jpg`}
+                      src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skin.num}.jpg`}
                     />
                     <span className="name-skin-md">{skin.name}</span>
                   </SwiperSlide>
@@ -78,7 +78,7 @@ const SkinsDisposable = (props) => {
             <div
               className="bc"
               style={{
-                background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skinBackground}.jpg") no-repeat center center`,
+                background: `url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skinBackground}.jpg") no-repeat center center`,
                 height: "90vh",
               }}
             ></div>
@@ -94,7 +94,7 @@ const SkinsDisposable = (props) => {
           <div className="bc-mobile">
             <img
               className="img-skin-mobile"
-              src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skinBackground}.jpg`}
+              src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skinBackground}.jpg`}
               alt=""
             />
           </div>
@@ -128,7 +128,7 @@ const SkinsDisposable = (props) => {
               <img
                 onClick={() => teste(skin.num, skin.name)}
                 className="img-carrosel-vertical"
-                src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skin.num}.jpg`}
+                src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ}_${skin.num}.jpg`}
               />
               <span className="name-skins">{skin.name}</span>
             </SwiperSlide>

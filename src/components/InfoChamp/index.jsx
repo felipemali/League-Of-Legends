@@ -19,7 +19,7 @@ const InfoChamp = (props) => {
     if (props.champ) {
       axios
         .get(
-          `http://ddragon.leagueoflegends.com/cdn/12.4.1/data/pt_BR/champion/${props.champ.id}.json`
+          `https://ddragon.leagueoflegends.com/cdn/12.4.1/data/pt_BR/champion/${props.champ.id}.json`
         )
 
         .then((response) => {
@@ -61,7 +61,7 @@ const InfoChamp = (props) => {
                   <div
                     className="container-title-subtitle-champ"
                     style={{
-                      background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.champ.id}_0.jpg") no-repeat center center`,
+                      background: `url("https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.champ.id}_0.jpg") no-repeat center center`,
                     }}
                   >
                     <span className="font-sub-title-mobile">
@@ -75,7 +75,7 @@ const InfoChamp = (props) => {
                   <div
                     className="bc-champ-selected"
                     style={{
-                      background: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg") no-repeat center center`,
+                      background: `url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_0.jpg") no-repeat center center`,
                     }}
                   >
                     <div className="name-caption-champ">
@@ -117,7 +117,7 @@ const InfoChamp = (props) => {
             <div className="container-img-champ-info">
               <img
                 className="img-champ-info"
-                src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_1.jpg`}
+                src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.champ.id}_1.jpg`}
                 alt=""
               />
             </div>
