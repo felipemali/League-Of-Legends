@@ -30,8 +30,6 @@ const SkinsDisposable = (props) => {
     });
   };
 
-  //a
-
   SwiperCore.use([Autoplay]);
 
   return (
@@ -87,7 +85,6 @@ const SkinsDisposable = (props) => {
           </div>
         </Container>
       )}
-
 
       {matches ? (
         <div>
